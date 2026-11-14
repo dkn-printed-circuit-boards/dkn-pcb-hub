@@ -10,6 +10,10 @@ Push policy: commit often and push via `tools/sync.sh` (no ask). Rewrites, branc
 
 **Hub role (David, 2026-11-14):** keep the GitHub org healthy, help child sessions along, be the place to find things. Go slow; build from reps.
 
-**Next:** repo planning (open: first boards? DB-only symbols or hand-drawn too?), then stand up the `dkn-pcb-parts-db` session. Brief: `briefs/dkn-pcb-parts-db.md`.
+**Next:** PARKED for the night (David, 2026-11-14). Resume with the parts-db design:
+`briefs/dkn-pcb-parts-db.md` records what's decided, what's leaning, and what's open. First ask: David picks
+3 test parts (a resistor family, a regulator, and an MCU with an eval board). Then do the SQLite-vs-Dolt bake-off.
+Also open: write the repo plan into REPOS.md (hub, parts-db, kicad (parse plus write), analysis,
+spice, lifecycle, digikey, mouser, octopart later, one repo per board from a template). Pick the first-slice board.
 
 PARKED (David, 2026-11-14: wait): whether the Digi-Key and Mouser clients move into this org or stay in claude_stuff.
