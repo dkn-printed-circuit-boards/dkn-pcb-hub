@@ -77,6 +77,7 @@ hardware/<board>/  (KiCad project)   fab/ (gitignored) # board repos
   published artifact. They don't copy the key.
 
 ## 6. Git
-- Default branch `main`. Commit per meaningful change. Push on David's call.
+- Default branch `main`. Commit per meaningful change. Sync (pull, then push) with `tools/sync.sh` as commits land.
+  History rewrites (squash or flatten) happen only when David asks.
 - No `--no-verify`. If a check blocks a file the repo truly needs, fix the check or allowlist the file.
 - Releases are tagged (`v0.1.0`, or `<board>-revA`). Fab packages attach to the release.

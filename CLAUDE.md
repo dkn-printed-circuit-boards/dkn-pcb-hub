@@ -69,8 +69,10 @@ from ORDERS.md when it starts. The hub relays David's orders and issues its own,
    `tools/check_portable.sh <repo>` before you commit.
 3. **No cross-repo imports.** Repos talk through CLIs and files with a documented schema
    (CONVENTIONS.md §5). Pin a dependency on another repo to a tag or commit, never a sibling path.
-4. **Pushes are David's call.** Commit locally whenever you like. Push, create repos, or
-   change visibility only when he says so.
+4. **Commit often; push through `tools/sync.sh`.** It fetches, reports new remote branches, pulls
+   with rebase, runs `check_portable.sh`, and pushes. If any step fails, it stops and you ask. Pushing
+   that way needs no ask (David, 2026-11-14). **Still David's call:** force-push, squash or flatten
+   history, deleting branches, creating repos, and changing visibility.
 5. **Failures are the lesson.** Fix it, write the lesson in your own CLAUDE.md, and post a
    `MISTAKE` line to BULLETIN.md. Show evidence (the command and its output) instead of claiming success.
 6. **Continuity lives on disk.** Each repo keeps `STATUS.md` (≤40 lines, rewritten at each
