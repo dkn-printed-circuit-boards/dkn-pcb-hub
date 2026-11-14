@@ -8,7 +8,7 @@ files=$(git ls-files -co --exclude-standard 2>/dev/null) || { echo "not a git re
 [ -z "$files" ] && { echo "OK (no files)"; exit 0; }
 pat_paths='(/Users/[A-Za-z0-9._-]+|/home/[A-Za-z0-9._-]+|[A-Za-z]:\\\\Users\\\\|~/Desktop|/opt/homebrew|GoogleDrive-|CloudStorage/)'
 pat_email='[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}'
-pat_keys='(AKIA[0-9A-Z]{16}|-----BEGIN [A-Z ]*PRIVATE KEY-----|gh[pousr]_[A-Za-z0-9]{30,}|(api[_-]?key|secret|token|password)[[:space:]]*[:=][[:space:]]*["'\'']?[A-Za-z0-9/+_-]{16,})'
+pat_keys='(AKIA[0-9A-Z]{16}|-----BEGIN [A-Z ]*PRIVATE KEY-----|gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{20,}|(api[_-]?key|secret|token|password)[[:space:]]*[:=][[:space:]]*["'\'']?[A-Za-z0-9/+_-]{16,})'
 rc=0
 check() { # label pattern
   out=$(echo "$files" | grep -v -E '^tools/check_portable\.sh$' | tr '\n' '\0' | xargs -0 grep -I -n -E -i "$2" -- 2>/dev/null \

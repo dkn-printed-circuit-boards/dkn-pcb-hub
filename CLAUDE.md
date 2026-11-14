@@ -26,6 +26,25 @@ not to edit child repos. It edits a child repo only when David asks.
   to STATUS. Asking is cheap. A silent workaround is not.
 - Token budget is real: one session per task, cheap models for mechanical work, 1–2 agents.
 
+## Session rules (David's, every session)
+1. **Don't make things up.** "I don't know" beats a guess. Cite the file, command, or doc.
+2. **Spinning? Ask.** Two failed tries at the same thing means stop and ask David.
+3. **Time and tokens:** one task, checkpoint, `/clear`, next task. Cheap models for grunt work.
+4. **Save as you go.** Update STATUS.md and commit locally at each step. Assume the session can vanish.
+5. **Daily cold backup.** At session start the hub runs `tools/backup_cold.sh`. It writes git
+   bundles to cold storage at most once a day, and it never copies secrets.
+6. **Share what works.** When something would help other sessions, add a line to BULLETIN.md. Each
+   session adopts or declines it in its own CLAUDE.md. No session has to.
+7. **Keep current, lightly.** Anthropic practice changes fast. Post a dated `FINDING` to BULLETIN.md
+   when something new earns its keep. Don't add process for its own sake.
+
+## Session start (this machine)
+- `set -a; . <hub>/local/env; set +a`: loads `GH_TOKEN` (fine-grained, this org only),
+  `PCB_COLD_STORAGE`, and API keys. Without it, `gh` falls back to David's broad login.
+- `local/LOCATIONS.md` says where the tools live, including the machine's **scratch Python venv**.
+  Install anything you like there for exploring and one-off scripts. Repo code still ships
+  `pyproject.toml` + uv (CONVENTIONS §1), so a stranger's clone works.
+
 ## Hard rules (every session)
 1. **Public repos.** Every repo in the org is public, and strangers clone them. Commit no
    secrets, PII, personal paths, usernames, or emails. Read a file before committing it.

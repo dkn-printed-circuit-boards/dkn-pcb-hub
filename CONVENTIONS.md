@@ -18,8 +18,8 @@ A stranger clones one repo onto Linux, macOS, or Windows, follows its README, an
 - Find external tools at runtime. Check the env var override first (`KICAD_CLI`), then
   `PATH`, then known install locations. If none is found, fail with an install hint.
   `tools/kicad-cli.sh` is the reference pattern.
-- Python: `pyproject.toml` with uv. The README uses `uv sync` and `uv run …`. No shared
-  venvs, no bare `pip`, and no `#!/usr/bin/python3` shebangs. Pin `requires-python`. Commit `uv.lock`.
+- Python: `pyproject.toml` with uv. The README uses `uv sync` and `uv run …`. Repo code never
+  depends on a shared venv or bare `pip` (a machine scratch venv is fine for exploring), and no `#!/usr/bin/python3` shebangs. Pin `requires-python`. Commit `uv.lock`.
 - Shell scripts: POSIX `sh` or bash with `#!/usr/bin/env bash`. No macOS-only flags
   (`sed -i ''`, BSD `date`). Use Python when the logic is non-trivial.
 - Pin tool versions in README and CI. KiCad's major version matters because file formats
