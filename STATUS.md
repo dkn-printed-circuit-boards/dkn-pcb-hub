@@ -3,8 +3,7 @@
 The hub is on GitHub: `dkn-printed-circuit-boards/dkn_pcb_hub` (public). It holds CLAUDE.md,
 CONVENTIONS.md, REPOS.md, BULLETIN.md, and tools/. local/ is gitignored, machine-only.
 
-**Next:** stand up the `dkn_pcb_parts_db` session. Its design brief is in hub chat, 2026-11-14.
+**Next:** stand up the `dkn_pcb_parts_db` session. Brief: `briefs/dkn_pcb_parts_db.md`.
 
-NEEDS DAVID (INSTALL): Full Disk Access for the terminal / Claude app. That lets sessions reach Google Drive cold storage ("Operation not permitted" today).
-NEEDS DAVID (RULING): should Digi-Key and Mouser API clients move into this org (public, portable), or stay in claude_stuff and be called through their CLI?
-NEEDS DAVID (RULING): which license? Proposed: MIT for code, CERN-OHL for hardware.
+NEEDS DAVID (INSTALL): Full Disk Access for the terminal / Claude app (System Settings → Privacy & Security → Full Disk Access, then restart it). The Drive folder `dkn-printed-circuit-boards` exists, but sessions get "Operation not permitted".
+PARKED (David, 2026-11-14: wait): whether the Digi-Key and Mouser clients move into this org or stay in claude_stuff.

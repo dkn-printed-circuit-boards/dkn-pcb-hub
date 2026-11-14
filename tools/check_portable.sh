@@ -12,7 +12,7 @@ pat_keys='(AKIA[0-9A-Z]{16}|-----BEGIN [A-Z ]*PRIVATE KEY-----|gh[pousr]_[A-Za-z
 rc=0
 check() { # label pattern
   out=$(echo "$files" | grep -v -E '^tools/check_portable\.sh$' | tr '\n' '\0' | xargs -0 grep -I -n -E -i "$2" -- 2>/dev/null \
-        | grep -v -E 'noreply@|example\.(com|org)|@users\.noreply\.github\.com' || true)
+        | grep -v -E 'git@github\.com|noreply@|example\.(com|org)|@users\.noreply\.github\.com' || true)
   # allowlist: lines containing "portable-ok"
   out=$(echo "$out" | grep -v 'portable-ok' || true)
   if [ -n "$out" ]; then echo "== $1"; echo "$out"; rc=1; fi

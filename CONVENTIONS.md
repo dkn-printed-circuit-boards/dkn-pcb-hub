@@ -43,7 +43,7 @@ hardware/<board>/  (KiCad project)   fab/ (gitignored) # board repos
 .github/workflows/ci.yml
 ```
 - Naming: repos `dkn_pcb_<thing>`. Python packages `dkn_pcb_<thing>`, which avoids stdlib collisions.
-- License: pick one per repo before first push. Default to MIT for code and CERN-OHL-P/S for hardware.
+- License: **MIT** for every repo, code and hardware (David, 2026-11-14). Copyright line: `dkn-printed-circuit-boards contributors`.
 
 ## 3. Where files go
 | Kind | Where |
@@ -51,7 +51,7 @@ hardware/<board>/  (KiCad project)   fab/ (gitignored) # board repos
 | Source, schematics, PCB layouts, libraries, small data (<1 MB), docs | git |
 | Fab outputs (gerbers, drill, pos, BOM exports), renders | **regenerated** by script or CI and attached to GitHub Releases. Not committed. |
 | Datasheets (PDF) | Not in git (copyright and size). Store the URL in the parts DB. A local cache goes in the user cache dir. |
-| Large or raw media (board photos, scope captures, raw API dumps) | Cold storage; the path is in `local/LOCATIONS.md`. The repo's `COLD_STORAGE.md` lists what's there and how to rebuild it. |
+| Large or raw media (board photos, scope captures, raw API dumps) | Cold storage: the Drive folder `dkn-printed-circuit-boards/<repo>/`, with the machine path in `local/LOCATIONS.md` or `$PCB_COLD_STORAGE`. The repo's `COLD_STORAGE.md` lists what's there and how to rebuild it. |
 | Secrets, API tokens | Env or `.env`. Never git, never cold storage. |
 | Machine-specific paths | `local/` in the hub, or env vars. |
 
