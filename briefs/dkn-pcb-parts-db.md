@@ -1,4 +1,4 @@
-# Brief: dkn_pcb_parts_db (hub advice, 2026-11-14)
+# Brief: dkn-pcb-parts-db (hub advice, 2026-11-14)
 
 This is advice, not a spec. The parts-DB session owns its design and records its decisions in its own repo.
 
@@ -10,6 +10,6 @@ This is advice, not a spec. The parts-DB session owns its design and records its
   `${DKN_PCB_LIB}` or `${KIPRJMOD}`. KiCad database libraries (ODBC) stay optional, because strangers won't have them set up.
 - **Distributor data (Digi-Key, Mouser) is a refreshable cache, not truth.** The keyless path
   must still build the library. Keys come only from env vars. Where the clients live is PARKED (see hub STATUS).
-- **Datasheets:** store the URL in the DB; PDFs go to cold storage `dkn_pcb_parts_db/datasheets/` (CONVENTIONS §3), never git.
+- **Datasheets:** store the URL in the DB; PDFs go to cold storage `dkn-pcb-parts-db/datasheets/` (CONVENTIONS §3), never git.
 - **Schema:** documented in-repo with a `schema_version` field. Add the repo's consumers to hub REPOS.md as they appear.
 - Before the first push: set the remote to SSH, add the MIT LICENSE, and run `../tools/check_portable.sh .`.

@@ -42,7 +42,8 @@ pyproject.toml uv.lock   src/<pkg>/   tests/          # code repos
 hardware/<board>/  (KiCad project)   fab/ (gitignored) # board repos
 .github/workflows/ci.yml
 ```
-- Naming: repos `dkn_pcb_<thing>`. Python packages `dkn_pcb_<thing>`, which avoids stdlib collisions.
+- Naming: repos `dkn-pcb-<thing>` (hyphens, David 2026-11-14). Python packages `dkn_pcb_<thing>`
+  (Python needs underscores), which also avoids stdlib collisions.
 - License: **MIT** for every repo, code and hardware (David, 2026-11-14). Copyright line: `dkn-printed-circuit-boards contributors`.
 
 ## 3. Where files go

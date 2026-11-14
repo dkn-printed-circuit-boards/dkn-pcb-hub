@@ -12,10 +12,10 @@ day="$(date +%Y-%m-%d)"
 dest="$root/$day"
 if [ -d "$dest" ] && [ "${1:-}" != "--force" ]; then echo "backup already done today: $dest"; exit 0; fi
 mkdir -p "$dest"
-for repo in "$hub" "$hub"/dkn_pcb_*/; do
+for repo in "$hub" "$hub"/dkn-pcb-*/; do
   repo="${repo%/}"
   git -C "$repo" rev-parse --git-dir >/dev/null 2>&1 || continue
-  name="$(basename "$repo")"; [ "$repo" = "$hub" ] && name="dkn_pcb_hub"
+  name="$(basename "$repo")"; [ "$repo" = "$hub" ] && name="dkn-pcb-hub"
   if git -C "$repo" rev-parse HEAD >/dev/null 2>&1; then
     git -C "$repo" bundle create "$dest/$name.bundle" --all 2>/dev/null
     git -C "$repo" bundle verify "$dest/$name.bundle" >/dev/null 2>&1 && echo "ok   $name" || echo "FAIL $name"

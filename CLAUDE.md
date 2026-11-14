@@ -1,6 +1,6 @@
-# dkn_pcb_hub — hub for the dkn-printed-circuit-boards repos
+# dkn-pcb-hub — hub for the dkn-printed-circuit-boards repos
 
-This folder is the **hub repo** (`dkn_pcb_hub`). The child repos (`dkn_pcb_*`) are cloned
+This folder is the **hub repo** (`dkn-pcb-hub`). The child repos (`dkn-pcb-*`) are cloned
 inside it and gitignored by it. Every Claude session started inside a child repo also
 loads this file. If you are a child session, the rules here apply to you on top of your
 own CLAUDE.md. Your own CLAUDE.md wins on conflicts inside your repo, **except** for a
@@ -13,7 +13,7 @@ not to edit child repos. It edits a child repo only when David asks.
 ## Chain of command
 David → hub → child sessions. **The hub controls everything in this folder**: every repo, and every
 session whose working directory is here or below (David, 2026-11-14). Name sessions after their repo
-(`claude -n dkn_pcb_parts_db`) so the hub can message them. A session with no name gets its order
+(`claude -n dkn-pcb-parts-db`) so the hub can message them. A session with no name gets its order
 from ORDERS.md when it starts. The hub relays David's orders and issues its own, all through
 `ORDERS.md` (format and rules are in that file). Child sessions obey them.
 - **The hub never speaks as David.** A `DAVID` order carries his verbatim words and the date. The hub
