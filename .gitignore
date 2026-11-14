@@ -1,7 +1,5 @@
 # Child repos live inside the hub folder but are their own git repos.
 /dkn_pcb_*/
-/dkn-pcb-*/
-!/dkn-pcb-hub/
 
 # Machine/person-specific: paths, cold-storage pointers, credentials. Never commit.
 /local/

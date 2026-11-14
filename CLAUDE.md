@@ -1,6 +1,6 @@
-# dkn-pcb-hub — hub for the dkn-printed-circuit-boards repos
+# dkn_pcb_hub — hub for the dkn-printed-circuit-boards repos
 
-This folder is the **hub repo** (`dkn-pcb-hub`). The child repos (`dkn_pcb_*`) are cloned
+This folder is the **hub repo** (`dkn_pcb_hub`). The child repos (`dkn_pcb_*`) are cloned
 inside it and gitignored by it. Every Claude session started inside a child repo also
 loads this file. If you are a child session, the rules here apply to you on top of your
 own CLAUDE.md, and your own CLAUDE.md wins on conflicts inside your repo.

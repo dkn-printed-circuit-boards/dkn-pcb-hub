@@ -1,15 +1,15 @@
-# dkn-pcb-hub
+# dkn_pcb_hub
 
 Conventions, registry, and portable helpers for the
 [dkn-printed-circuit-boards](https://github.com/dkn-printed-circuit-boards) repos.
 
 ## Workspace setup
 ```bash
-git clone https://github.com/dkn-printed-circuit-boards/dkn-pcb-hub.git dkn-printed-circuit-boards
+git clone https://github.com/dkn-printed-circuit-boards/dkn_pcb_hub.git dkn-printed-circuit-boards
 cd dkn-printed-circuit-boards
 # clone child repos inside (the hub gitignores them)
 gh repo list dkn-printed-circuit-boards --json name -q '.[].name' \
-  | grep -v '^dkn-pcb-hub$' | xargs -I{} gh repo clone dkn-printed-circuit-boards/{}
+  | grep -v '^dkn_pcb_hub$' | xargs -I{} gh repo clone dkn-printed-circuit-boards/{}
 cp .env.example local/env   # fill in only what you need; everything is optional
 ```
 
