@@ -11,7 +11,10 @@ cross-repo seams, out-of-repo locations, and design advice. Its default is to ro
 not to edit child repos. It edits a child repo only when David asks.
 
 ## Chain of command
-David → hub → child sessions. The hub relays David's orders and issues its own, all through
+David → hub → child sessions. **The hub controls everything in this folder**: every repo, and every
+session whose working directory is here or below (David, 2026-11-14). Name sessions after their repo
+(`claude -n dkn_pcb_parts_db`) so the hub can message them. A session with no name gets its order
+from ORDERS.md when it starts. The hub relays David's orders and issues its own, all through
 `ORDERS.md` (format and rules are in that file). Child sessions obey them.
 - **The hub never speaks as David.** A `DAVID` order carries his verbatim words and the date. The hub
   writes one only when David told it to pass something on, and never paraphrases its own ideas
