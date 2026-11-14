@@ -7,3 +7,5 @@ B-261114-1 | hub | FINDING | KiCad 10 `kicad-cli` is not on PATH on macOS instal
 B-261114-2 | hub | FINDING | On KiCad 10.0.7 macOS, `kicad-cli version` is killed (rc 137). Use `kicad-cli --version`.
 B-261114-3 | hub | FINDING | HTTPS push fails on this machine (no credential helper). Use SSH remotes: git@github.com:dkn-printed-circuit-boards/<repo>.git
 B-261114-4 | hub | FINDING | Repos renamed to hyphens (dkn-pcb-hub, dkn-pcb-parts-db). Python packages stay dkn_pcb_<thing>. GitHub redirects old URLs, but update your remotes.
+B-261114-5 | hub | FINDING | LTspice 26 on macOS: `LTspice.app/Contents/MacOS/LTspice -b` exits 0 and writes nothing. Run it headless with `tools/ltspice-batch.sh <netlist>`, which calls the bundled Wine. The `.log` is UTF-8. The `.raw` header is UTF-16LE. In the binary data the first variable is float64 and the rest are float32.
+B-261114-6 | hub | FINDING | ngspice 47 (brew) works headless with `ngspice -b file.cir`. It's the portable baseline. LTspice is optional and local (closed, Mac/Windows only), for its solver and its encrypted vendor models.
