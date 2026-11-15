@@ -5,6 +5,7 @@ CONVENTIONS.md, REPOS.md, BULLETIN.md, and tools/. local/ is gitignored, machine
 
 Cold storage reachable (verified 2026-11-14). Daily git-bundle backups: `tools/backup_cold.sh`, run at hub session start; first run OK.
 GitHub: fine-grained org-only token in `local/env`. CLAUDE.md now carries David's 7 session rules and session-start steps.
+Hub folder moved on this machine (2026-11-14). Status line, `local/LOCATIONS.md`, and Claude memory now point at the new spot. Checked: status line, check_portable, gh.
 
 Push policy: commit often and push via `tools/sync.sh` (no ask). Rewrites, branch deletes, repo creation, and visibility stay David's.
 
