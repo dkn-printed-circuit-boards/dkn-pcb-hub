@@ -7,7 +7,8 @@ dir="$(cd "${1:-.}" && pwd)"; cd "$dir"
 br="$(git symbolic-ref --short HEAD)"
 git fetch --prune origin
 # remote branches with no local branch of the same name
-new=$(git for-each-ref --format='%(refname:short)' refs/remotes/origin | sed 's|^origin/||' | grep -v -E '^(HEAD|origin)$' \
+# (grep -v exits 1 on empty input, e.g. a brand-new remote; `|| true` keeps pipefail + set -e from killing the script)
+new=$(git for-each-ref --format='%(refname:short)' refs/remotes/origin | sed 's|^origin/||' | { grep -v -E '^(HEAD|origin)$' || true; } \
       | while read -r b; do git show-ref --verify --quiet "refs/heads/$b" || echo "$b"; done)
 [ -n "$new" ] && { echo "== remote branches not checked out here (review them):"; echo "$new"; }
 if [ -n "$(git status --porcelain --untracked-files=no)" ]; then
