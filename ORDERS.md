@@ -24,4 +24,4 @@ closed ones to LOG.md.
 Format: `O-YYMMDD-n | DAVID|HUB | to: <repo>|all | <order> | quote: "<verbatim>" (DAVID only) | Acks:`
 
 ## Open
-(none)
+O-261117-1 | DAVID | to: dkn-pcb-parts-db | Make the answer cache part of your scope. Record every part question another session asks you, along with your answer (facts with citations, or gaps), so the same question is answered from the record and never looked up again. Write it into your CLAUDE.md scope and SCHEMA.md, build it, and ack in STATUS. Hub advice, not David's words: have each cached answer list the fact ids it used, so a superseded fact marks the answer stale. | quote: "it is just going to manage parts. using the datasheet, user guides, forum posts, etc, it will retain information about parts. also, it is going to cache everything another session asks it about parts (so it does not have to re-lookup something it was asked)." (2026-11-17) | Acks:
